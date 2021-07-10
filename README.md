@@ -4,9 +4,11 @@
 
 Pay no attention to this project. I just use it to keep track of how many of a certain blahblah video game lingo.
 
-Essentially, if you have any use for this tool, then the title alone tells you exactly what this tool does.
+Essentially, if you have any use for this tool, then you know exactly what this tool does just from the title.
 
 ## ...but if you do need it
+
+The app is currently not hosted anywhere, so you have to set it up locally.
 
 1. Clone the project
 2. `npm start`
@@ -20,3 +22,4 @@ Essentially, if you have any use for this tool, then the title alone tells you e
  - highlight the + and - buttons a bit better
  - highlight green for completed captures (10)
  - clamp values to 0..10
+ - set up a host for the app
