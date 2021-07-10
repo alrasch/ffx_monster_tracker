@@ -23,6 +23,9 @@ function App() {
 	const { state, dispatch } = React.useContext(MainContext);
 
 	const handleClick = useCallback((areaName, monsterName, newCount) => {
+		newCount = (newCount > 10) ? 10 : newCount;
+		newCount = (newCount < 0) ? 0 : newCount;
+
 		dispatch({
 			type: "UPDATE_COUNT",
 			area: areaName,

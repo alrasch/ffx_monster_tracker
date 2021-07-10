@@ -10,7 +10,7 @@ const reducer = (state, action) => {
 						[action.monster]: action.count
 					}
 				}
-			}
+			};
 		case "PINCREMENT":
 			return {
 				...state,
