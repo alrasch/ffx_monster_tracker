@@ -3,12 +3,9 @@ const reducer = (state, action) => {
 		case "UPDATE_COUNT":
 			return {
 				...state,
-				"areas": {
-					...state.areas,
-					[action.area]: {
-						...state["areas"][action.area],
-						[action.monster]: action.count
-					}
+				[action.area]: {
+					...state[action.area],
+					[action.monster]: action.count
 				}
 			};
 		default:

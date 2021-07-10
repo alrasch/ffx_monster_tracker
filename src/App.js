@@ -34,7 +34,7 @@ function App() {
 		});
 	}, [dispatch]);
 
-	const areaObjects = Object.entries(state.areas).map(([area, monster]) => {
+	const areaObjects = Object.entries(state).map(([area, monster]) => {
 		const monsters = Object.entries(monster).map(([monsterName, count]) =>
 			<Grid item xs={12} key={monsterName}>
 				<Monster area={area} name={monsterName} count={count} handleClick={handleClick}/>
