@@ -39,7 +39,7 @@ function App() {
 		);
 
 		return (
-			<Grid item xs={2} key={area}>
+			<Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={area}>
 				<Paper className={classes.paper}>
 					<Grid item xs={12}><h3>{area}</h3></Grid>
 					{monsters}

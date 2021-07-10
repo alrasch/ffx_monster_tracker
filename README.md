@@ -19,7 +19,6 @@ The app is currently not hosted anywhere, so you have to set it up locally.
 ## TODO
  - fill in missing monster names
  - find out if the gap between, for example, Besaid and Thunder Plains can be closed with some clever use of the Grid components
- - highlight the + and - buttons a bit better
  - highlight green for completed captures (10)
  - clamp values to 0..10
  - set up a host for the app
