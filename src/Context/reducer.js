@@ -11,17 +11,6 @@ const reducer = (state, action) => {
 					}
 				}
 			};
-		case "PINCREMENT":
-			return {
-				...state,
-				"test": {
-					...state.test,
-					pest: {
-						...state.test.pest,
-						mest: state.test.pest.mest + 1
-					}
-				}
-			}
 		default:
 			return state;
 	}
