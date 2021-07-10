@@ -6,18 +6,20 @@ import './css/common.css';
 import Monster from "./component/Monster";
 import {MainContext} from "./Context";
 
+const useStyles = makeStyles((theme) => ({
+	root: {
+		flexGrow: 1,
+	},
+	paper: {
+		padding: theme.spacing(0),
+		textAlign: 'center',
+		color: theme.palette.text.primary,
+		backgroundColor: theme.palette.background
+	},
+}));
+
 function App() {
-	const useStyles = makeStyles((theme) => ({
-		root: {
-			flexGrow: 1,
-		},
-		paper: {
-			padding: theme.spacing(0),
-			textAlign: 'center',
-			color: theme.palette.text.primary,
-			backgroundColor: theme.palette.background
-		},
-	}));
+
 	const classes = useStyles();
 
 	const { state, dispatch } = React.useContext(MainContext);

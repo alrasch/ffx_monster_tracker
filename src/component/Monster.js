@@ -3,6 +3,30 @@ import {Button, Grid, IconButton} from "@material-ui/core";
 import {Add, ArrowUpward, Remove} from "@material-ui/icons";
 import {makeStyles} from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => ({
+	root: {
+		flexGrow: 1,
+	},
+	addButtonContainer: {
+		backgroundColor: "lightblue"
+	},
+	subtractButtonContainer: {
+		backgroundColor: "lightyellow"
+	},
+	maxButtonContainer: {
+		backgroundColor: "lightgreen"
+	},
+	monsterName: {
+		textAlign: "center"
+	},
+	row: {
+		backgroundColor: "lightgray"
+	},
+	rowSuccess: {
+		backgroundColor: "lightgreen"
+	}
+}));
+
 export default function Monster({area, name, count, handleClick}) {
 
 	const handleIncrement = (areaName, monsterName) => {
@@ -16,30 +40,6 @@ export default function Monster({area, name, count, handleClick}) {
 	const handleMaxout = (areaName, monsterName) => {
 		handleClick(areaName, monsterName, 10);
 	}
-
-	const useStyles = makeStyles((theme) => ({
-		root: {
-			flexGrow: 1,
-		},
-		addButtonContainer: {
-			backgroundColor: "lightblue"
-		},
-		subtractButtonContainer: {
-			backgroundColor: "lightyellow"
-		},
-		maxButtonContainer: {
-			backgroundColor: "lightgreen"
-		},
-		monsterName: {
-			textAlign: "center"
-		},
-		row: {
-			backgroundColor: "lightgray"
-		},
-		rowSuccess: {
-			backgroundColor: "lightgreen"
-		}
-	}));
 
 	const classes = useStyles();
 	const rowClass = count === 10 ? classes.rowSuccess : classes.row;
