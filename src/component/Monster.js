@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Grid, IconButton} from "@material-ui/core";
-import {Add, Remove} from "@material-ui/icons";
+import {Add, ArrowUpward, Remove} from "@material-ui/icons";
 import {makeStyles} from "@material-ui/core/styles";
 
 export default function Monster({area, name, count, handleClick}) {
@@ -13,26 +13,45 @@ export default function Monster({area, name, count, handleClick}) {
 		handleClick(areaName, monsterName, count-1);
 	}
 
+	const handleMaxout = (areaName, monsterName) => {
+		handleClick(areaName, monsterName, 10);
+	}
+
 	const useStyles = makeStyles((theme) => ({
 		root: {
 			flexGrow: 1,
 		},
 		addButtonContainer: {
-			backgroundColor: "lightgreen"
+			backgroundColor: "lightblue"
 		},
 		subtractButtonContainer: {
 			backgroundColor: "lightyellow"
 		},
+		maxButtonContainer: {
+			backgroundColor: "lightgreen"
+		},
 		monsterName: {
 			textAlign: "center"
+		},
+		row: {
+			backgroundColor: "lightgray"
+		},
+		rowSuccess: {
+			backgroundColor: "lightgreen"
 		}
 	}));
 
 	const classes = useStyles();
+	const rowClass = count === 10 ? classes.rowSuccess : classes.row;
 
 	return (
-		<Grid container item>
-			<Grid item xs={8} className={classes.monsterName}>{name}</Grid>
+		<Grid container item className={rowClass}>
+			<Grid item xs={7} className={classes.monsterName}>{name}</Grid>
+			<Grid item xs={1} className={classes.maxButtonContainer}>
+				<IconButton color={"primary"} variant={"contained"} size={"small"} onClick={() => handleMaxout(area, name)}>
+					<ArrowUpward fontSize={"small"} />
+				</IconButton>
+			</Grid>
 			<Grid item xs={1} className={classes.addButtonContainer}>
 				<IconButton color={"primary"} variant={"contained"} size={"small"} onClick={() => handleIncrement(area, name)}>
 					<Add fontSize={"small"} />
