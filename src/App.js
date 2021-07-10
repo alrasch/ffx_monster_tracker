@@ -32,9 +32,9 @@ function App() {
 	}, [dispatch]);
 
 	const areaObjects = Object.entries(state.areas).map(([area, monster]) => {
-		const bonster = Object.entries(monster).map(([ponster, count]) =>
-			<Grid item xs={12} key={ponster}>
-				<Monster area={area} name={ponster} count={count} handleClick={handleClick}/>
+		const monsters = Object.entries(monster).map(([monsterName, count]) =>
+			<Grid item xs={12} key={monsterName}>
+				<Monster area={area} name={monsterName} count={count} handleClick={handleClick}/>
 			</Grid>
 		);
 
@@ -42,7 +42,7 @@ function App() {
 			<Grid item xs={2} key={area}>
 				<Paper className={classes.paper}>
 					<Grid item xs={12}><h3>{area}</h3></Grid>
-					{bonster}
+					{monsters}
 				</Paper>
 			</Grid>
 		);
